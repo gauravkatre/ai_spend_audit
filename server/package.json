@@ -4,25 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "nodemon --exec \"ts-node\" src/index.ts",
-  "build": "tsc",
-  "start": "node dist/index.js"
-},
+    "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+   "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
-    "mongoose": "^9.6.2"
+    "mongoose": "^9.6.2",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.9.1",
+    "@types/uuid": "^10.0.0",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"

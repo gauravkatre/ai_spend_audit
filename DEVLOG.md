@@ -26,3 +26,15 @@ Blockers / what I'm stuck on:Faced module resolution errors in NodeNext setup (E
 
 Plan for tomorrow: Start React frontend development
 
+Day 3 — 2026-05-22
+
+Hours worked: 4
+
+What I did: Built the React frontend — HomePage, AuditPage, and ResultsPage. Set up Zustand store with localStorage persistence. Connected to the backend and tested the full flow — audit submission works, results are displayed with savings breakdown and AI summary.
+
+What I learned:In NodeNext, .js extensions are required in imports even in React files. Also, JSX must have properly closed tags — a single missing tag can break the entire file
+
+Blockers / what I'm stuck on:Lead capture email sending is not implemented yet 
+
+Plan for tomorrow: Set up Resend for email sending, write tests, configure CI/CD, and deploy the application.
+

@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express';
 import Lead from '../models/Lead.js';
+import { sendAuditEmail } from '../controllers/emailService.js';
 
 const router = Router();
 
-// POST /api/leads — email capture
 router.post('/', async (req: Request, res: Response) => {
   try {
     const { email, companyName, role, teamSize, auditId, totalMonthlySavings } = req.body;
@@ -12,7 +12,7 @@ router.post('/', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Email and auditId required' });
     }
 
-    // Honeypot check — agar website field filled hai toh bot hai
+    // Honeypot check
     if (req.body.website) {
       return res.status(200).json({ message: 'ok' });
     }
@@ -30,6 +30,15 @@ router.post('/', async (req: Request, res: Response) => {
     });
 
     await lead.save();
+
+    // Email bhejo
+    await sendAuditEmail({
+      email,
+      companyName,
+      totalMonthlySavings,
+      totalAnnualSavings: totalMonthlySavings * 12,
+      isHighSavings,
+    });
 
     res.status(201).json({
       message: 'Lead captured successfully',

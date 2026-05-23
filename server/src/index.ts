@@ -18,8 +18,8 @@ const connectDB = async () => {
     console.error('MongoDB connection error:', error);
     process.exit(1);
   }
-};
-
+};    
+// For Testing I am adding this line
 connectDB();
 
 const limiter = rateLimit({

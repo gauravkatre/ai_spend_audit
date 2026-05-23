@@ -38,3 +38,15 @@ Blockers / what I'm stuck on:Lead capture email sending is not implemented yet
 
 Plan for tomorrow: Set up Resend for email sending, write tests, configure CI/CD, and deploy the application.
 
+Day 4 — 2026-05-23
+
+Hours worked: 3
+
+What I did: Completed Resend email integration, wrote 7 audit engine tests all passing, set up GitHub Actions CI which is now green.
+
+What I learned: Jest does not run directly on Windows through nodemon path — had to use node_modules/jest/bin/jest.js directly. GitHub Actions was not triggering because local branch was named master instead of main.
+
+Blockers / what I'm stuck on: Deployment is pending.
+
+Plan for tomorrow: Deploy frontend to Vercel, backend to Render, test shareable URL end to end.
+

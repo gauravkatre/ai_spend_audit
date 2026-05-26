@@ -12,7 +12,7 @@ Who it is for: Startup founders and engineering managers paying for Cursor, Clau
 
 ## Live URL
 
-https://your-vercel-url.vercel.app
+https://ai-spend-audit-xi-green.vercel.app/
 
 ## Quick Start
 
